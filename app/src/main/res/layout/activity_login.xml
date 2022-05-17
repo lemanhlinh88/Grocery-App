@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".activities.LoginActivity">
 
 <!--    <LinearLayout-->
 <!--        android:orientation="vertical"-->
@@ -138,8 +138,21 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
         app:layout_constraintVertical_bias="0.13" />
 
+
+    <ProgressBar
+        android:id="@+id/progressbarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.083" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/notUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bạn chưa có tài khoản?"
@@ -147,14 +160,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.29" />
 
-    <Button
-        android:backgroundTint="#fff"
-        android:id="@+id/btnTranToRegister"
+    <TextView
+        android:id="@+id/loginTranToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đăng ký"
@@ -162,13 +173,9 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.168"/>
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/notUser"
+        app:layout_constraintVertical_bias="0.136" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

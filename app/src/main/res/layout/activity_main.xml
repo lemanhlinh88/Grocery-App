@@ -90,7 +90,7 @@
                 android:src="@drawable/key" />
 
             <TextView
-                android:id="@+id/tranToLogin"
+                android:id="@+id/mainTranToLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -111,7 +111,7 @@
                 android:src="@drawable/registration" />
 
             <TextView
-                android:id="@+id/tranToRegister"
+                android:id="@+id/mainTranToRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -122,14 +122,27 @@
         </LinearLayout>
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progressbarMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX=".8"
+        android:scaleY=".8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.86" />
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="Cùng mua sắm với chúng tôi"
+        android:textColor="#00cc00"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:textColor="#00cc00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

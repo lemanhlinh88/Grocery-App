@@ -5,34 +5,55 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.authenfirebase.activities.LoginActivity;
+import com.example.authenfirebase.activities.RegisterActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     public TextView tranTologin,tranToRegister;
+    ProgressBar progressBarMain;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        tranTologin = findViewById(R.id.tranToLogin);
-        tranToRegister = findViewById(R.id.tranToRegister);
+        auth = FirebaseAuth.getInstance();
+        tranTologin = findViewById(R.id.mainTranToLogin);
+        tranToRegister = findViewById(R.id.mainTranToRegister);
+        progressBarMain = findViewById(R.id.progressbarMain);
+        progressBarMain.setVisibility(View.GONE);
+        if(auth.getCurrentUser() != null) {
+            progressBarMain.setVisibility(View.VISIBLE);
+            startActivity(new Intent(MainActivity.this,HomeActivity.class));
+            Toast.makeText(MainActivity.this,"Đợi chút,bạn đang đăng nhập",Toast.LENGTH_SHORT).show();
+            finish();
+        }
 
         tranTologin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                progressBarMain.setVisibility(View.GONE);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
+                progressBarMain.setVisibility(View.VISIBLE);
+                finish();
             }
         });
 
         tranToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                progressBarMain.setVisibility(View.GONE);
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                progressBarMain.setVisibility(View.VISIBLE);
+                finish();
             }
         });
     }
