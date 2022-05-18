@@ -15,8 +15,8 @@
         android:padding="2dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="240dp"
-            android:layout_height="160dp"
+            android:layout_width="280dp"
+            android:layout_height="100dp"
             android:id="@+id/popular_img"
             app:riv_corner_radius="12dp"
             android:scaleType="centerCrop"
@@ -46,7 +46,7 @@
 
             <ImageView
                 android:layout_width="70dp"
-                android:layout_height="30dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ratingbar"
                 android:layout_marginLeft="-5dp"/>
             <TextView

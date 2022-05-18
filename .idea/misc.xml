@@ -4,31 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/account.xml" value="0.2035" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/border.xml" value="0.2035" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/side_nav_bar (2).xml" value="0.2035" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/side_nav_bar.xml" value="0.2035" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/activity_home.xml" value="0.22282608695652173" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/activity_view_all.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/fragment_my_carts.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/fragment_my_orders.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/fragment_new_products.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/home_cat_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/nav_category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/popular_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/recommended_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/layout/view_all_item.xml" value="0.25416666666666665" />
         <entry key="..\:/AuthenFirebase/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/AuthenFirebase/app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="..\:/AuthenFirebase/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/AuthenFirebase/app/src/main/res/layout/activity_register.xml" value="0.19010416666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/activity_login.xml" value="0.18611111111111112" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/app_bar_home.xml" value="0.20102564102564102" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_home.xml" value="0.20102564102564102" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_my_carts.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_my_orders.xml" value="0.20102564102564102" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_new_products.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_offers.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/home_cat_items.xml" value="0.20102564102564102" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/popular_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/layout/recommended_items.xml" value="0.20102564102564102" />
-        <entry key="..\:/GroceryApp/Grocery-App/app/src/main/res/menu/activity_main_drawer.xml" value="0.20102564102564102" />
       </map>
     </option>
   </component>

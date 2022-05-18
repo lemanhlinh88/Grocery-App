@@ -33,6 +33,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         Glide.with(context).load(categoryList.get(position).getImg_url()).into(holder.catImg);
         holder.catName.setText(categoryList.get(position).getName());
     }
