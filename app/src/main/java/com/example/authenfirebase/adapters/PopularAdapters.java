@@ -20,6 +20,11 @@ public class PopularAdapters extends RecyclerView.Adapter<PopularAdapters.ViewHo
     Context context;
     List<PopularModel> popularModelList;
 
+    public PopularAdapters(Context context, List<PopularModel> popularModelList) {
+        this.context = context;
+        this.popularModelList = popularModelList;
+    }
+
     public Context getContext() {
         return context;
     }
