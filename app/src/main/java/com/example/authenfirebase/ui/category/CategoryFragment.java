@@ -39,8 +39,9 @@ public class CategoryFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentCategoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        recyclerView = root.findViewById(R.id.category_rec);
         db = FirebaseFirestore.getInstance();
+        recyclerView = root.findViewById(com.example.authenfirebase.R.id.category_recycle);
+
         //popular items
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
         categoryModelList = new ArrayList<>();

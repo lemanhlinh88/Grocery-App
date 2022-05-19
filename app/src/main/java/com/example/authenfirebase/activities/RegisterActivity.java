@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                 progressBarRegister.setVisibility(View.GONE);
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
-//                finish();
+                finish();
                 //Toast.makeText(RegisterActivity.this,"Chuyển tới trang đăng nhập thành công",Toast.LENGTH_SHORT).show();
             }
         });

@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView tranTologin,tranToRegister;
+    public TextView tranToLogin,tranToRegister;
     ProgressBar progressBarMain;
     FirebaseAuth auth;
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         auth = FirebaseAuth.getInstance();
-        tranTologin = findViewById(R.id.mainTranToLogin);
+        tranToLogin = findViewById(R.id.mainTranToLogin);
         tranToRegister = findViewById(R.id.mainTranToRegister);
         progressBarMain = findViewById(R.id.progressbarMain);
         progressBarMain.setVisibility(View.GONE);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        tranTologin.setOnClickListener(new View.OnClickListener() {
+        tranToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressBarMain.setVisibility(View.GONE);
