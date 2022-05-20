@@ -125,7 +125,7 @@ public class DetailedActivity extends AppCompatActivity {
         SimpleDateFormat curTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurTime = curTime.format(calendar.getTime());
 
-        SimpleDateFormat curDate = new SimpleDateFormat("HH:mm:ss a");
+        SimpleDateFormat curDate = new SimpleDateFormat("MM dd, yyyy");
         saveCurDate = curDate.format(calendar.getTime());
 
         final HashMap<String,Object> cartMap = new HashMap<>();
