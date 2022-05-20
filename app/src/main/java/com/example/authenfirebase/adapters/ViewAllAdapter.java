@@ -1,6 +1,7 @@
 package com.example.authenfirebase.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.authenfirebase.R;
+import com.example.authenfirebase.activities.DetailedActivity;
 import com.example.authenfirebase.models.ViewAllModel;
 
 import java.util.List;
@@ -37,8 +39,25 @@ public class ViewAllAdapter extends RecyclerView.Adapter<ViewAllAdapter.ViewHold
         Glide.with(context).load(list.get(position).getImg_url()).into(holder.imageView);
         holder.name.setText(list.get(position).getName());
         holder.desc.setText(list.get(position).getDesc());
-        holder.price.setText(list.get(position).getPrice()+"/kg");
+        if(list.get(position).getType().equals("egg")) {
+            holder.price.setText(list.get(position).getPrice()+"/tá");
+        }
+        else if(list.get(position).getType().equals("milk")) {
+            holder.price.setText(list.get(position).getPrice()+"/lít");
+        }
+        else {
+            holder.price.setText(list.get(position).getPrice()+"/kg");
+        }
         holder.rating.setText(list.get(position).getRating());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailedActivity.class);
+                intent.putExtra("detail",list.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

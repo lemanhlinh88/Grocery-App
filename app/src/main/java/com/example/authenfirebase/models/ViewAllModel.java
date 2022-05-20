@@ -1,6 +1,8 @@
 package com.example.authenfirebase.models;
 
-public class ViewAllModel {
+import java.io.Serializable;
+
+public class ViewAllModel implements Serializable {
     String name;
     String desc;
     String img_url;

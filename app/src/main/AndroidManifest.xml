@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthenFirebase">
         <activity
+            android:name=".activities.DetailedActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ViewAllActivity"
             android:exported="false" />
         <activity
