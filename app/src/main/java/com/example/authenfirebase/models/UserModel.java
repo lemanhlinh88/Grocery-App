@@ -4,6 +4,7 @@ public class UserModel {
     public String name;
     public String email;
     public String password;
+    public String profileImg;
 
     public UserModel() {
 
@@ -13,6 +14,14 @@ public class UserModel {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public String getProfileImg() {
+        return profileImg;
+    }
+
+    public void setProfileImg(String profileImg) {
+        this.profileImg = profileImg;
     }
 
     public String getName() {

@@ -67,8 +67,8 @@ public class myCartsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         overTotalAmount = root.findViewById(R.id.totalPrice);
-        LocalBroadcastManager.getInstance(getActivity())
-                .registerReceiver(mMessageReceiver,new IntentFilter("MyTotalAmount"));
+//        LocalBroadcastManager.getInstance(getActivity())
+//                .registerReceiver(mMessageReceiver,new IntentFilter("MyTotalAmount"));
 
         cartModelList = new ArrayList<>();
         cartAdapter = new MyCartAdapter(getActivity(),cartModelList);
@@ -89,6 +89,8 @@ public class myCartsFragment extends Fragment {
                         progressBar.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }
+
+                    calculateTotalAmount(cartModelList);
                 }
             }
         });
@@ -105,11 +107,22 @@ public class myCartsFragment extends Fragment {
         return root;
     }
 
-    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            int totalBill = intent.getIntExtra("totalAmount",0);
-            overTotalAmount.setText("Tổng hóa đơn: " + totalBill);
+    public void calculateTotalAmount(List<MyCartModel> cartModelList){
+        double totalAmount = 0;
+
+        for(MyCartModel myCartModel : cartModelList){
+            totalAmount += myCartModel.getTotalPrice();
         }
-    };
+
+        overTotalAmount.setText("Tổng tiền: " + totalAmount);
+
+    }
+
+//    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            int totalBill = intent.getIntExtra("totalAmount",0);
+//            overTotalAmount.setText("Tổng hóa đơn: " + totalBill);
+//        }
+//    };
 }

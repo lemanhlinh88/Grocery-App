@@ -3,9 +3,12 @@ package com.example.authenfirebase.ui.home;
 import static android.os.Build.VERSION_CODES.R;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,12 +21,15 @@ import com.example.authenfirebase.R;
 import com.example.authenfirebase.adapters.HomeAdapter;
 import com.example.authenfirebase.adapters.PopularAdapters;
 import com.example.authenfirebase.adapters.RecommendedAdapter;
+import com.example.authenfirebase.adapters.ViewAllAdapter;
 import com.example.authenfirebase.databinding.FragmentHomeBinding;
 import com.example.authenfirebase.models.HomeCategory;
 import com.example.authenfirebase.models.PopularModel;
 import com.example.authenfirebase.models.RecommendedModel;
+import com.example.authenfirebase.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -36,6 +42,12 @@ public class HomeFragment extends Fragment {
     //popular items
     List<PopularModel> popularModelList;
     PopularAdapters popularAdapters;
+
+    //search
+    EditText search_box;
+    List<ViewAllModel> viewAllModelList;
+    RecyclerView recyclerViewSearch;
+    ViewAllAdapter viewAllAdapter;
 
     RecyclerView popularRec,homeCatRec,recommendedRec;
     FirebaseFirestore db;
@@ -129,7 +141,60 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
+
+        //search
+        recyclerViewSearch = root.findViewById(com.example.authenfirebase.R.id.search_rec);
+        search_box = root.findViewById(com.example.authenfirebase.R.id.searchBox);
+        viewAllModelList = new ArrayList<>();
+        viewAllAdapter = new ViewAllAdapter(getContext(), viewAllModelList);
+        recyclerViewSearch.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewSearch.setAdapter(viewAllAdapter);
+        recyclerViewSearch.setHasFixedSize(true);
+        search_box.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().isEmpty()){
+                    viewAllModelList.clear();
+                    viewAllAdapter.notifyDataSetChanged();
+                } else {
+                    searchProduct(editable.toString());
+                }
+            }
+        });
+
         return root;
+    }
+
+    public void searchProduct(String type){
+        if(!type.isEmpty()){
+            db.collection("AllProducts").whereEqualTo("type", type).get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if(task.isSuccessful() && task.getResult() != null){
+                                viewAllModelList.clear();
+                                viewAllAdapter.notifyDataSetChanged();
+
+                                for(DocumentSnapshot doc : task.getResult().getDocuments()){
+                                    ViewAllModel viewAllModel = doc.toObject(ViewAllModel.class);
+                                    viewAllModelList.add(viewAllModel);
+                                    viewAllAdapter.notifyDataSetChanged();
+                                }
+                            }
+                        }
+                    });
+
+        }
     }
 
     @Override

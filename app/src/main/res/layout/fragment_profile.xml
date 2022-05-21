@@ -27,7 +27,7 @@
         android:background="@drawable/edittext_bg"
         android:hint="Tên của bạn"
         android:padding="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:elevation="3dp"
@@ -44,7 +44,7 @@
         android:background="@drawable/edittext_bg"
         android:hint="Email của bạn"
         android:padding="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/account"
         android:drawablePadding="10dp"
         android:elevation="3dp"
@@ -60,7 +60,7 @@
         android:background="@drawable/edittext_bg"
         android:hint="Số điện thoại"
         android:padding="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="10dp"
         android:elevation="3dp"
@@ -76,7 +76,7 @@
         android:background="@drawable/edittext_bg"
         android:hint="Địa chỉ của bạn"
         android:padding="13dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_baseline_location_on_24"
         android:drawablePadding="10dp"
         android:elevation="3dp"
@@ -87,16 +87,18 @@
 
     <Button
         android:id="@+id/profile_btn_update"
-        android:text="Cập nhật"
-        android:padding="15dp"
-        android:textColor="@color/black"
-        android:backgroundTint="#00ff00"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00ff00"
+        android:padding="15dp"
+        android:text="Cập nhật"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_address" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_address"
+        app:layout_constraintVertical_bias="0.39" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

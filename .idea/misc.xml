@@ -3,7 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/drawable/side_nav_bar.xml" value="0.2035" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/activity_detailed.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/activity_nav_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/app_bar_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/content_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/fragment_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/fragment_my_carts.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/home_cat_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/my_cart_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/layout/nav_header_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidApp/ahthFirebaseV2/Grocery-App/app/src/main/res/menu/home.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/account.xml" value="0.2035" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/border.xml" value="0.2035" />
         <entry key="..\:/AndroidApp/authFirebase/app/src/main/res/drawable/side_nav_bar (2).xml" value="0.2035" />
