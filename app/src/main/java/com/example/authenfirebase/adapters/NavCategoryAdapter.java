@@ -3,6 +3,7 @@ package com.example.authenfirebase.adapters;
 import static android.os.Build.VERSION_CODES.R;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.authenfirebase.R;
+import com.example.authenfirebase.activities.NavCategoryActivity;
 import com.example.authenfirebase.models.NavCategoryModel;
 
 import java.util.List;
@@ -39,6 +41,15 @@ public class NavCategoryAdapter extends RecyclerView.Adapter<NavCategoryAdapter.
         holder.name.setText(list.get(position).getName());
         holder.discount.setText(list.get(position).getDiscount());
         holder.desc.setText(list.get(position).getDesc());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NavCategoryActivity.class);
+                intent.putExtra("type",list.get(position).getType());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

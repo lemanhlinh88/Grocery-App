@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +35,17 @@ public class CategoryFragment extends Fragment {
     List<NavCategoryModel> categoryModelList;
     NavCategoryAdapter navCategoryAdapter;
     private FragmentCategoryBinding binding;
+    ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentCategoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         db = FirebaseFirestore.getInstance();
+        progressBar = root.findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.VISIBLE);
         recyclerView = root.findViewById(com.example.authenfirebase.R.id.category_recycle);
+        recyclerView.setVisibility(View.GONE);
 
         //popular items
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false));
@@ -58,9 +63,13 @@ public class CategoryFragment extends Fragment {
                                 NavCategoryModel navCategoryModel = document.toObject(NavCategoryModel.class);
                                 categoryModelList.add(navCategoryModel);
                                 navCategoryAdapter.notifyDataSetChanged();
+                                recyclerView.setVisibility(View.GONE);
+                                recyclerView.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Toast.makeText(getActivity(),"Có lỗi xảy ra",Toast.LENGTH_SHORT).show();
+                            recyclerView.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
                         }
                     }
                 });
