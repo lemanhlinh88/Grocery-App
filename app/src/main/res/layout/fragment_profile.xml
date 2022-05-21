@@ -6,17 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ff0000"
+        android:src="@drawable/profile"
+        android:layout_marginTop="15dp"/>
+
+
+    <EditText
+        android:id="@+id/profile_name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:background="@drawable/edittext_bg"
+        android:hint="Tên của bạn"
+        android:padding="13dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_img"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <EditText
+        android:id="@+id/profile_email"
+        android:inputType="textEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:hint="Email của bạn"
+        android:padding="13dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/account"
+        android:drawablePadding="10dp"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_name"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <EditText
+        android:id="@+id/profile_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:hint="Số điện thoại"
+        android:padding="13dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+        android:drawablePadding="10dp"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_email"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <EditText
+        android:id="@+id/profile_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_bg"
+        android:hint="Địa chỉ của bạn"
+        android:padding="13dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="10dp"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_phone"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <Button
+        android:id="@+id/profile_btn_update"
+        android:text="Cập nhật"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:backgroundTint="#00ff00"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/profile_address" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
