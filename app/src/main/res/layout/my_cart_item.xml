@@ -154,6 +154,12 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
+            
+            <ImageView
+                android:id="@+id/deleteItem"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
         </LinearLayout>
     </ScrollView>
 </androidx.cardview.widget.CardView>

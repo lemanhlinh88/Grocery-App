@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AuthenFirebase">
         <activity
+            android:name=".activities.PlaceOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.NavCategoryActivity"
             android:exported="false" />
         <activity

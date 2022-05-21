@@ -1,12 +1,15 @@
 package com.example.authenfirebase.models;
 
-public class MyCartModel {
+import java.io.Serializable;
+
+public class MyCartModel implements Serializable {
     String productName;
     String productPrice;
     String currentDate;
     String currentTime;
     String totalQuantity;
     int totalPrice;
+    String documentId;
 
     public MyCartModel() {
     }
@@ -18,6 +21,14 @@ public class MyCartModel {
         this.currentTime = currentTime;
         this.totalQuantity = totalQuantity;
         this.totalPrice = totalPrice;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 
     public String getProductName() {
