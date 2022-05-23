@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.authenfirebase.activities.PlaceOrderActivity;
 import com.example.authenfirebase.adapters.MyCartAdapter;
@@ -28,6 +29,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
@@ -35,7 +37,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class myCartsFragment extends Fragment {
-
     RecyclerView recyclerView;
     MyCartAdapter cartAdapter;
     TextView overTotalAmount;
@@ -111,6 +112,63 @@ public class myCartsFragment extends Fragment {
         buynow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                        .collection("AddToCart")
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if(task.isSuccessful()){
+                                    overTotalAmount.setText("Tổng tiền: " + 0);
+                                    cartModelList.clear();
+
+                                    for (QueryDocumentSnapshot dqs : task.getResult()){
+                                        db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                                                .collection("AddToCart")
+                                                .document(dqs.getId())
+                                                .delete()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                        }
+                                                    }
+                                                });
+                                    }
+
+
+                                    db.collection("CurrentUser").document(auth.getCurrentUser().getUid())
+                                            .collection("AddToCart").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                                if (task.getResult().getDocuments().size() == 0) {
+                                                    progressBar.setVisibility(View.GONE);
+                                                    haveItemInCart.setVisibility(View.GONE);
+                                                    noItemInCart.setVisibility(View.VISIBLE);
+                                                }
+                                                else {
+                                                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
+                                                        String documentId = documentSnapshot.getId();
+
+                                                        MyCartModel cartModel = documentSnapshot.toObject(MyCartModel.class);
+                                                        cartModel.setDocumentId(documentId);
+                                                        cartModelList.add(cartModel);
+                                                        cartAdapter.notifyDataSetChanged();
+                                                        progressBar.setVisibility(View.GONE);
+                                                        recyclerView.setVisibility(View.VISIBLE);
+                                                    }
+
+                                                    calculateTotalAmount(cartModelList);
+                                                }
+                                            }
+
+                                        }
+                                    });
+                                }
+                            }
+                        });
+
                 Intent intent = new Intent(getContext(), PlaceOrderActivity.class);
                 intent.putExtra("itemList",(Serializable) cartModelList);
                 startActivity(intent);
