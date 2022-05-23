@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#B3FB9F"
+            android:background="#28CCE1"
             android:orientation="vertical"
             android:padding="8dp">
 
@@ -125,7 +125,7 @@
                 <TextView
                     android:id="@+id/total_price"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Tổng giá tiền"
                     android:textSize="16sp"
@@ -154,12 +154,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
-            
-            <ImageView
-                android:id="@+id/deleteItem"
-                android:src="@drawable/ic_baseline_delete_24"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+
         </LinearLayout>
     </ScrollView>
 </androidx.cardview.widget.CardView>

@@ -7,30 +7,28 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menuhome"
-            android:title="@string/menu_home" />
+            android:title="Trang chủ" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/menu_person"
-            android:title="@string/profile" />
+            android:title="Hồ sơ cá nhân" />
         <item
             android:id="@+id/nav_category"
             android:icon="@drawable/ic_baseline_category_24"
-            android:title="@string/category" />
-        <item
-            android:id="@+id/nav_offers"
-            android:icon="@drawable/ic_baseline_local_offer_24"
-            android:title="@string/offers" />
-        <item
-            android:id="@+id/nav_new_products"
-            android:icon="@drawable/menu_person"
-            android:title="@string/new_products" />
+            android:title="Phân loại" />
+
         <item
             android:id="@+id/nav_my_orders"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/my_orders" />
+            android:title="Đơn hàng" />
         <item
             android:id="@+id/nav_my_carts"
             android:icon="@drawable/mycart"
-            android:title="@string/my_carts" />
+            android:title="Giỏ hàng" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/loyout"
+            android:title="Đăng xuất" />
     </group>
 </menu>

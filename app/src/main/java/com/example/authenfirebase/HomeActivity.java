@@ -1,5 +1,6 @@
 package com.example.authenfirebase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -51,8 +52,8 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_profile, R.id.nav_category,R.id.nav_offers,R.id.nav_new_products,
-                R.id.nav_my_orders,R.id.nav_my_carts)
+                R.id.nav_home, R.id.nav_profile, R.id.nav_category,
+                R.id.nav_my_orders,R.id.nav_my_carts, R.id.nav_logout)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
@@ -81,7 +82,30 @@ public class HomeActivity extends AppCompatActivity {
 
                     }
                 });
+
+        Intent intent = getIntent();
+
+        if(intent.getStringExtra("isUpdate") == "true"){
+            database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            UserModel userModel = snapshot.getValue(UserModel.class);
+                            headerName.setText(userModel.getName());
+                            headerEmail.setText(userModel.getEmail());
+
+
+                            Glide.with(getApplicationContext()).load(userModel.getProfileImg()).into(headerImg);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+        }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

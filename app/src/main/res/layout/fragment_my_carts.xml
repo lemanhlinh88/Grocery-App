@@ -14,7 +14,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint1"
+        android:id="@+id/noItemInCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
@@ -46,7 +46,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint2"
+        android:id="@+id/haveItemInCart"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

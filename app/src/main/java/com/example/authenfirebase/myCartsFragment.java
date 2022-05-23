@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,6 +44,8 @@ public class myCartsFragment extends Fragment {
     FirebaseFirestore db;
     ProgressBar progressBar;
     Button buynow;
+    ConstraintLayout noItemInCart;
+    ConstraintLayout haveItemInCart;
 
 
     public myCartsFragment() {
@@ -60,6 +63,8 @@ public class myCartsFragment extends Fragment {
 
         progressBar = root.findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
+        noItemInCart = root.findViewById(R.id.noItemInCart);
+        haveItemInCart = root.findViewById(R.id.haveItemInCart);
 
         recyclerView = root.findViewById(R.id.recycle_view);
         recyclerView.setVisibility(View.GONE);
@@ -79,19 +84,27 @@ public class myCartsFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
-                        String documentId = documentSnapshot.getId();
-
-                        MyCartModel cartModel = documentSnapshot.toObject(MyCartModel.class);
-                        cartModel.setDocumentId(documentId);
-                        cartModelList.add(cartModel);
-                        cartAdapter.notifyDataSetChanged();
+                    if (task.getResult().getDocuments().size() == 0) {
                         progressBar.setVisibility(View.GONE);
-                        recyclerView.setVisibility(View.VISIBLE);
+                        haveItemInCart.setVisibility(View.GONE);
+                        noItemInCart.setVisibility(View.VISIBLE);
                     }
+                    else {
+                        for (DocumentSnapshot documentSnapshot : task.getResult().getDocuments()){
+                            String documentId = documentSnapshot.getId();
 
-                    calculateTotalAmount(cartModelList);
+                            MyCartModel cartModel = documentSnapshot.toObject(MyCartModel.class);
+                            cartModel.setDocumentId(documentId);
+                            cartModelList.add(cartModel);
+                            cartAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        }
+
+                        calculateTotalAmount(cartModelList);
+                    }
                 }
+
             }
         });
 

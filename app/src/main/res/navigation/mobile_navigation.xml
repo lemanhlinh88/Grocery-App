@@ -10,28 +10,16 @@
         android:name="com.example.authenfirebase.ui.home.HomeFragment"
         android:label="Trang chủ"
         tools:layout="@layout/fragment_home" />
-
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.authenfirebase.ui.profile.ProfileFragment"
         android:label="Trang cá nhân"
         tools:layout="@layout/fragment_profile" />
-
     <fragment
         android:id="@+id/nav_category"
         android:name="com.example.authenfirebase.ui.category.CategoryFragment"
         android:label="Thể loại"
         tools:layout="@layout/fragment_category" />
-    <fragment
-        android:id="@+id/nav_offers"
-        android:name="com.example.authenfirebase.offersFragment"
-        android:label="Yêu cầu"
-        tools:layout="@layout/fragment_offers" />
-    <fragment
-        android:id="@+id/nav_new_products"
-        android:name="com.example.authenfirebase.newProductsFragment"
-        android:label="Sản phẩm mới"
-        tools:layout="@layout/fragment_new_products" />
     <fragment
         android:id="@+id/nav_my_carts"
         android:name="com.example.authenfirebase.myCartsFragment"
@@ -42,4 +30,9 @@
         android:name="com.example.authenfirebase.myOrdersFragment"
         android:label="Đơn hàng của tôi"
         tools:layout="@layout/fragment_my_orders" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.authenfirebase.Logout"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>
